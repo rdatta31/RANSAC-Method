@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body><br>
+
+		<div class = "sidenav">
+
+			<h4 align = "center"> Measurement of Displacement of Laser during Flow using a RANSAC Algoithm </h4>
+							
+				<div class = "foot">
+					<p align="center">  Rishabh Datta is a 4th Year Mechanical Engineering student at Georgia Tech, Atlanta. Rishabh is interested in Green Technology, Concentrated Solar Power, Renewable Energy, Data Science, and CFD. For more projects, 
+					<a href="https://rdatta31.github.io/">click here.</a>
+
+					</p>
+				</div>
+
+			</div>
+
+
+		<div class = "main">
+
+			<div class = "top">
+				<h4 align = "center"> Measurement of Displacement of Laser during Flow using a RANSAC Algoithm </h4>
+	
+				
+					<p align="center">  Rishabh Datta is a 4th Year Mechanical Engineering student at Georgia Tech, Atlanta. Rishabh is interested in Green Technology, Concentrated Solar Power, Renewable Energy, Data Science, and CFD. For more projects, 
+					<a href="https://rdatta31.github.io/">click here.</a>
+
+					</p>
+				</div><br>
+
+
+			<h1> Determining Displacement during Granular Flow using Optical Methods </h1><br>
+	<h2> Overview</h2>
+	
+	<p> The objective of this project is to experimentally determine the layer height <i>h</i> for granular flow of particles down rough inclined surfaces optically from images of the flow. A laser beam was positioned to shoot a cross-beam across the surface. The set-up is shown below.</p>
+
+	 <p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/fig1.png" alt="figure 1"/></p>
+
+	<p align="center">Figure 1: Experimental Set-Up</p>
+
+	<p> Layer height can be determined from the displacement of the laser on the surface during flow using the following relationship.</p>
+
+	<p align="center"><img src="http://latex.codecogs.com/gif.latex?$$h&space;=&space;d*tan&space;(\theta&plus;\alpha)$$" title="$$h = d*tan (\theta+\alpha)$$" /></p>
+	</p>
+
+	<p> The displacement of teh laser beam on the surface was determined by fitting a second order curve to the beam, using the Random Sample Concensus (RANSAC) Algorithm. The RANSAC algorithm is useful in fitting curves to a data set in the presence of outlers. The RANSAC algorithm works by picking a random sample from the dataset. A curve is then fit to the sample. Outliers are identified dy comparing the distance of a point to the fitted model. The process is repeated iteratively, to maximize the number of inliers to obtain the best regression model. </p>  
+
+	<p> This project was completed at the Solar Fuels Laboratory, Georgia Tech, under the supervision of  Dr. Peter Loutzenhiser.</p>
+
+
+	<br><h2> Methodology </h2>
+
+	<p>Images before flow (Control Image) and during flow (Test Image) were captured and converted into greyscale images. The points illuminated by the laser beam were then identified by setting a brightness threshold. The coordinates for the laser beam were then fed into a RANSAC fitting function, which fit a second order curve to the input data. The RANSAC fitting function used in this code was written to fit curves of a desired order to the given data.</p>
+
+	<p> This project uses the RANSAC method, but it has been modified to supplement image processing methods used. In addition, the best regression model is determined using all inliers, instead of the minimum number of points needed for a given order fit. </p>
+
+	<p>The average displacement was then determined by comparing the distance between the two best curves of best fit between the control and test images.</p>
+
+	<p><a href="url"> Click here for the MATLAB code used in this project. </a><p>
+
+	<br><h2> Results </h2>
+
+	<p>The raw control and test images used for this project are shown below.
+
+	<p align="center">Figure 2: Control Image</p>
+	<p align="center">Figure 3: Control Image</p>
+
+	<p>The points illuminated by the laser were identified by setting a brightness threshold. These points on the control image are shown in Figure 4.</p>
+
+	<p align="center">Figure 4: Position of the Laser Beam on the Surface</p>
+
+	The points were then fed into the RANSAC fitting function, which was able to fit the best regression model based on the inliers shown below in Figure 5. 
+
+	<p align="center">Figure 5: Curve Fitting using the RANSAC Algorithm</p>
+
+	<p>Figure 6 shows the fitted curve on the vertical laser beam for the control image. The same process was repeated for the test image. Figure 7 shows the fitted curve on the vertical laser beam for the test image. The shift in position of the laser beam due to flow is shown in Figure 8.</p>
+
+	<p align="center">Figure 6: 2nd Order Curve Fitted to the Laser Beam on the Control Image</p>
+
+	<p align="center">Figure 7: 2nd Order Curve Fitted to the Laser Beam on the Test Image</p>
+
+	<p align="center">Figure 8: Shift in Position of the Beam due to Flow</p>
+
+	<p> The displacement of the laser beam with distance from the bottom of the image is shown in Figure 9. From this plot, the average displacement was calculated to be 13.79 px.</p>
+
+	<p align="center">Figure 9: Shift in Position of the Beam due to Flow</p>
+
+	<p>A 2nd order curve was fit to the data because it seemed to better approximate the laser beam position compared to a first order fit. Although the RANSAC algorithm is able to estimate a good fit each time, it is important to note that the best regression model changes each time the function is run, because the model is based on a random sample each time. By increasing the number of iterations of the fit, the best model becaomes more consistent. In addition, the variation taht this phenomenon causes in teh average displacement value depends on the scale or resolution of the images.</p>
+
+	<br><h2> Conclusions </h2>
+
+	<p> The RANSAC algorithm was effective in fitting a curve to the vertical laser beam on the test and control images. A RANSAC algorithm was used because the data contained outliers. Fitting curves to the images before and after flow enabled measurement of the displacemnt of the laser beam during flow, which can be used to determine the height of the granular flow. However, this method causes variation in the value of displacement obtained for each run, because the best model is based on a different random sample each time.</p>
+
+
+
+
+
+
+
+		
+
+
