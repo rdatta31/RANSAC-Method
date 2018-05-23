@@ -53,7 +53,7 @@
 }
 
 .figure {
-    width:70%;
+    width:90%;
     height:auto;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -63,7 +63,7 @@
 }
 
 img{
-    max-width: 70%;
+    max-width: 90%;
 }
 
 /* On bigger screens, where height is more than 800px, change the style of the sidebar (less padding and a smaller font size) */
