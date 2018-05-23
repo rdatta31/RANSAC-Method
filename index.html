@@ -35,6 +35,11 @@
 
 
 			<h1> Determining Displacement during Granular Flow using Optical Methods </h1><br>
+
+			<p> MATLAB Code used in this project </p>
+			<p> <a href="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/ransac.m"> RANSAC Algorithm </a></p>
+			<p> <a href="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/laserLine.m"> Displacement Measurement Script </a></p>
+
 	<h2> Overview</h2>
 	
 	<p> The objective of this project is to experimentally determine the layer height <i>h</i> for granular flow of particles down rough inclined surfaces optically from images of the flow. A laser beam was positioned to shoot a cross-beam across the surface. The set-up is shown below.</p>
@@ -61,32 +66,48 @@
 
 	<p>The average displacement was then determined by comparing the distance between the two best curves of best fit between the control and test images.</p>
 
-	<p><a href="url"> Click here for the MATLAB code used in this project. </a><p>
-
 	<br><h2> Results </h2>
 
-	<p>The raw control and test images used for this project are shown below.
+	<p>The raw control and test images used for this project are shown below.</p>
+
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/control.png" alt="figure 2"/></p>
 
 	<p align="center">Figure 2: Control Image</p>
+
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/flow.png" alt="figure 3"/></p>
+
+
 	<p align="center">Figure 3: Control Image</p>
 
 	<p>The points illuminated by the laser were identified by setting a brightness threshold. These points on the control image are shown in Figure 4.</p>
+
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/controlLaser.png" alt="figure 4"/></p>
 
 	<p align="center">Figure 4: Position of the Laser Beam on the Surface</p>
 
 	The points were then fed into the RANSAC fitting function, which was able to fit the best regression model based on the inliers shown below in Figure 5. 
 
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/controlRansac.png" alt="figure 5"/></p>
+
 	<p align="center">Figure 5: Curve Fitting using the RANSAC Algorithm</p>
 
 	<p>Figure 6 shows the fitted curve on the vertical laser beam for the control image. The same process was repeated for the test image. Figure 7 shows the fitted curve on the vertical laser beam for the test image. The shift in position of the laser beam due to flow is shown in Figure 8.</p>
 
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/controlCurve.png" alt="figure 6"/></p>
+
 	<p align="center">Figure 6: 2nd Order Curve Fitted to the Laser Beam on the Control Image</p>
 
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/flowCurve.png" alt="figure 7"/></p>
+
 	<p align="center">Figure 7: 2nd Order Curve Fitted to the Laser Beam on the Test Image</p>
+
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/laser positions.png" alt="figure 8"/></p>
 
 	<p align="center">Figure 8: Shift in Position of the Beam due to Flow</p>
 
 	<p> The displacement of the laser beam with distance from the bottom of the image is shown in Figure 9. From this plot, the average displacement was calculated to be 13.79 px.</p>
+
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/displacement.png" alt="figure 9"/></p>
 
 	<p align="center">Figure 9: Shift in Position of the Beam due to Flow</p>
 
