@@ -5,124 +5,85 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body><br>
+<body>
+
+		<div class = "top">
+			<h4> RISHABH DATTA </h4>
+			
+			<p class = "bio"> Rishabh Datta is a 4th Year Mechanical Engineering student at Georgia Tech, Atlanta. Rishabh is interested in Green Technology, Concentrated Solar Power, Renewable Energy, CFD and Data Science. He is drawn to challenges and loves working on novel projects and ideas.</p>
+			<p class = "bio"> Click here for Rishabh's <a class ="resume" href="rdatta31.github.io/ResumeSpring2018 copy.pdf"> résumé</a></p>
+
+			<p align="center">
+				<a class = "icon" href="https://www.facebook.com/ryzus" ><img class = "logo" src="https://raw.githubusercontent.com/rdatta31/rdatta31.github.io/master/logos/fb.png" alt="facebook"/> </a>
+
+				<a class = "icon" href="https://www.linkedin.com/in/rishabh-datta-90a43820/" ><img class = "logo" src="https://raw.githubusercontent.com/rdatta31/rdatta31.github.io/master/logos/linkedin.png" alt="linkedin"/> </a>
+
+				<a class = "icon" href="mailto:rishabh.datta@gatech.edu" ><img class = "logo" src="https://raw.githubusercontent.com/rdatta31/rdatta31.github.io/master/logos/email.png" alt="email"/> 
+				</a>
+				
+			</p>
+		</div>
 
 		<div class = "sidenav">
 
-			<h4 align = "center"> Measurement of Displacement of Laser during Flow using a RANSAC Algorithm </h4>
-							
-				<div class = "foot">
-					<p align="center">  Rishabh Datta is a 4th Year Mechanical Engineering student at Georgia Tech, Atlanta. Rishabh is interested in Green Technology, Concentrated Solar Power, Renewable Energy, Data Science, and CFD. For more projects, 
-					<a href="https://rdatta31.github.io/">click here.</a>
 
-					</p>
-				</div>
+			<h4> RISHABH DATTA </h4>
+			<p align="center"><img class = "headshot" src="https://raw.githubusercontent.com/rdatta31/rdatta31.github.io/master/Headshotbw.jpg"
+			alt = "Headshot"></>
 
-			</div>
+			<p class ="bioside"> Rishabh Datta is a 4th Year Mechanical Engineering student at Georgia Tech, Atlanta. Rishabh is interested in Green Technology, Concentrated Solar Power, Renewable Energy, CFD and Data Science. He is drawn to challenges and loves working on novel projects and ideas. </p>
 
+			<p class = "bio"> Click here for Rishabh's <a class ="resume" href="rdatta31.github.io/ResumeSpring2018 copy.pdf"> résumé</a></p>
 
-		<div class = "main">
+			<p>
+				<a class = "icon" href="https://www.facebook.com/ryzus" ><img class = "logo" src="https://raw.githubusercontent.com/rdatta31/rdatta31.github.io/master/logos/fb.png" alt="facebook"/> </a>
 
-			<div class = "top">
-				<h4 align = "center"> Measurement of Displacement of Laser during Flow using a RANSAC Algorithm </h4>
-	
+				<a class = "icon" href="https://www.linkedin.com/in/rishabh-datta-90a43820/" ><img class = "logo" src="https://raw.githubusercontent.com/rdatta31/rdatta31.github.io/master/logos/linkedin.png" alt="linkedin"/> </a>
+
+				<a class = "icon" href="mailto:rishabh.datta@gatech.edu" ><img class = "logo" src="https://raw.githubusercontent.com/rdatta31/rdatta31.github.io/master/logos/email.png" alt="email"/> 
+				</a>
 				
-					<p align="center">  Rishabh Datta is a 4th Year Mechanical Engineering student at Georgia Tech, Atlanta. Rishabh is interested in Green Technology, Concentrated Solar Power, Renewable Energy, Data Science, and CFD. For more projects, 
-					<a href="https://rdatta31.github.io/">click here.</a>
-
-					</p>
-				</div><br>
-
-
-			<h1> Determining Displacement during Granular Flow using Optical Methods </h1><br>
-
-			<p> MATLAB Code used in this project </p>
-			<p> <a href="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/ransac.m"> RANSAC Algorithm </a></p>
-			<p> <a href="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/laserLine.m"> Displacement Measurement Script </a></p>
-
-	<br><h2> Overview</h2><br>
-	
-	<p> The objective of this project is to experimentally determine the layer height <i>h</i> for granular flow of particles down rough inclined surfaces optically from images of the flow. A laser beam was positioned to shoot a cross-beam across the surface. The set-up is shown below.</p>
-
-	 <p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/fig1.png" alt="figure 1"/></p>
-
-	<p align="center">Figure 1: Experimental Set-Up</p>
-
-	<p> Layer height can be determined from the displacement of the laser on the surface during flow using the following relationship.</p>
-
-	<p align="center"><img src="http://latex.codecogs.com/gif.latex?$$h&space;=&space;d*tan&space;(\theta&plus;\alpha)$$" title="$$h = d*tan (\theta+\alpha)$$" /></p>
-	</p>
-
-	<p> The displacement of the laser beam on the surface was determined by fitting a second order curve to the beam, using the Random Sample Concensus (RANSAC) Algorithm. The RANSAC algorithm is useful in fitting curves to a data set in the presence of outlers. The RANSAC algorithm works by picking a random sample from the dataset. A curve is then fit to the sample. Outliers are identified dy comparing the distance of a point to the fitted model. The process is repeated iteratively, to maximize the number of inliers to obtain the best regression model. </p>  
-
-	<p> This project was completed at the Solar Fuels Laboratory, Georgia Tech, under the supervision of  Dr. Peter Loutzenhiser.</p>
-
-
-	<br><h2> Methodology </h2>
-
-	<p>Images before flow (Control Image) and during flow (Test Image) were captured and converted into greyscale images. The points illuminated by the laser beam were then identified by setting a brightness threshold. The coordinates for the laser beam were then fed into a RANSAC fitting function, which fit a second order curve to the input data. The RANSAC fitting function used in this code was written to fit curves of a desired order to the given data.</p>
-
-	<p> This project uses the RANSAC method, but it has been modified to supplement image processing methods used. In addition, the best regression model is determined using all inliers, instead of the minimum number of points needed for a given order fit. </p>
-
-	<p>The average displacement was then determined by comparing the distance between the two best curves of best fit between the control and test images.</p>
-
-	<br><h2> Results </h2>
-
-	<p>The raw control and test images used for this project are shown below.</p>
-
-	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/control.png" alt="figure 2"/></p>
-
-	<p align="center">Figure 2: Control Image</p>
-
-	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/flow.png" alt="figure 3"/></p>
-
-
-	<p align="center">Figure 3: Test Image</p>
-
-	<p>The points illuminated by the laser were identified by setting a brightness threshold. These points on the control image are shown in Figure 4.</p>
-
-	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/controlLaser.png" alt="figure 4"/></p>
-
-	<p align="center">Figure 4: Position of the Laser Beam on the Surface</p>
-
-	The points were then fed into the RANSAC fitting function, which was able to fit the best regression model based on the inliers shown below in Figure 5. 
-
-	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/controlRansac.png" alt="figure 5"/></p>
-
-	<p align="center">Figure 5: Curve Fitting using the RANSAC Algorithm</p>
-
-	<p>Figure 6 shows the fitted curve on the vertical laser beam for the control image. The same process was repeated for the test image. Figure 7 shows the fitted curve on the vertical laser beam for the test image. The shift in position of the laser beam due to flow is shown in Figure 8.</p>
-
-	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/controlCurve.png" alt="figure 6"/></p>
-
-	<p align="center">Figure 6: 2nd Order Curve Fitted to the Laser Beam on the Control Image</p>
-
-	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/flowCurve.png" alt="figure 7"/></p>
-
-	<p align="center">Figure 7: 2nd Order Curve Fitted to the Laser Beam on the Test Image</p>
-
-	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/laser positions.png" alt="figure 8"/></p>
-
-	<p align="center">Figure 8: Shift in Position of the Beam due to Flow</p>
-
-	<p> The displacement of the laser beam with distance from the bottom of the image is shown in Figure 9. From this plot, the average displacement was calculated to be 13.79 px.</p>
-
-	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/Flow Image/displacement.png" alt="figure 9"/></p>
-
-	<p align="center">Figure 9: Shift in Position of the Beam due to Flow</p>
-
-	<p>A 2nd order curve was fit to the data because it seemed to better approximate the laser beam position compared to a first order fit. Although the RANSAC algorithm is able to estimate a good fit each time, it is important to note that the best regression model changes each time the function is run, because the model is based on a random sample each time. By increasing the number of iterations of the fit, the best model becaomes more consistent. In addition, the variation taht this phenomenon causes in the average displacement value depends on the scale or resolution of the images.</p>
-
-	<br><h2> Conclusions </h2>
-
-	<p> The RANSAC algorithm was effective in fitting a curve to the vertical laser beam on the test and control images. A RANSAC algorithm was used because the data contained outliers. Fitting curves to the images before and after flow enabled measurement of the displacemnt of the laser beam during flow, which can be used to determine the height of the granular flow. However, this method causes variation in the value of displacement obtained for each run, because the best model is based on a different random sample each time.</p>
+			</p>
+		</div>
 
 
 
+		<div class = "Project1">
+			<h1> Granular Flow of CAM-28 Particles down Rough Inclined Surfaces</h1>
+			<p> This project explores how CAM-28 particles behave as they flow down rough inclined surfaces. 
+			<a href="https://rdatta31.github.io/granular-flow/"> <i>Read more</i> </a></p>
+		</div>
+
+		<div class = "Project1">
+			<h1> Measurement of Displacement of Laser during Flow using a RANSAC Algoithm</h1>
+			<p> This project uses a RANSAC algorithm to fit a second order curve to approximate a laser beam projected onto a surface during granular flow. The displacement of the laser beam is used to determine height of granular flow.
+			<a href="https://rdatta31.github.io/RANSAC-Method/"> <i>Read more</i> </a></p>
+		</div>
+
+		<div class = "Project1">
+			<h1> Experimental Determination of Layer Height for Granular Flow</h1>
+			<p> This project explores how height of granular flow down rough inclined surfaces can be determined optically from images of the flow.
+			<a href="https://rdatta31.github.io/determining-layer-height/"> <i>Read more</i> </a></p>
+		</div>
+
+		<div class = "Project1">
+			<h1> Predicting Cryptocurrency Prices from Google Trends Data</h1>
+			<p> This project explores the existence of a statistically significant relationship between Bitcoin prices and popularity of Google search terms. 
+			<a href="https://rdatta31.github.io/Cryptocurrency-Google-Trends/"> <i>Read more</i> </a></p>
+		</div>
+
+		<div class = "Project1">
+			<h1> Exploring Challenges in Recycling Metallized Film</h1>
+			<p> Non-Biodegradable metallized film is a major waste management challenge in developing countries. This project the characteristics of metallized film, and uses these to redefine how metallized film can be recycled.
+			<a href="https://rdatta31.github.io/Metallized-Film/"> <i>Read more</i> </a></p>
+		</div>
 
 
+		<div class = "Project1">
+			<h1> Fighting Parasitic Infection in Marsabit, Kenya</h1>
+			<p> This project aims to develop a sustainable approach to solving a major healthcare issue among the tribesin Marsabit, Kenya. 
+			<a href="https://rdatta31.github.io/Shoes-For-Marsabit/"> <i>Read more</i> </a></p>
+		</div>
 
-
-		
-
-
+	</body>
+	</html>
