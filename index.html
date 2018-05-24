@@ -37,8 +37,8 @@
 			<h1> Determining Displacement during Granular Flow using Optical Methods </h1><br>
 
 			<p> MATLAB Code used in this project </p>
-			<p> <a href="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/ransac.m"> RANSAC Algorithm </a></p>
-			<p> <a href="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/laserLine.m"> Displacement Measurement Script </a></p>
+			<p> <a href="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/ransac.m"> RANSAC Algorithm </a></p>
+			<p> <a href="https://raw.githubusercontent.com/rdatta31/RANSAC-Method/master/laserLine.m"> Displacement Measurement Script </a></p>
 
 	<br><h2> Overview</h2><br>
 	
@@ -64,7 +64,7 @@
 
 	<p> This project uses the RANSAC method, but it has been modified to supplement image processing methods used. In addition, the best regression model is determined using all inliers, instead of the minimum number of points needed for a given order fit. </p>
 
-	<p>The average displacement was then determined by comparing the distance between the two best curves of best fit between the control and test images.</p>
+	<p>The average displacement was then determined by comparing the distance between the two curves of best fit between the control and test images.</p>
 
 	<br><h2> Results </h2>
 
@@ -111,11 +111,11 @@
 
 	<p align="center">Figure 9: Shift in Position of the Beam due to Flow</p>
 
-	<p>A 2nd order curve was fit to the data because it seemed to better approximate the laser beam position compared to a first order fit. Although the RANSAC algorithm is able to estimate a good fit each time, it is important to note that the best regression model changes each time the function is run, because the model is based on a random sample each time. By increasing the number of iterations of the fit, the best model becaomes more consistent. In addition, the variation taht this phenomenon causes in the average displacement value depends on the scale or resolution of the images.</p>
+	<p>A 2nd order curve was fit to the data because it seemed to better approximate the laser beam position compared to a first order fit. Although the RANSAC algorithm is able to estimate a good fit each time, it is important to note that the best regression model changes each time the function is run, because the model is based on a random sample each time. By increasing the number of iterations of the fit, the best model becaomes more consistent. In addition, the variation that this phenomenon causes in the average displacement value depends on the scale or resolution of the images.</p>
 
 	<br><h2> Conclusions </h2>
 
-	<p> The RANSAC algorithm was effective in fitting a curve to the vertical laser beam on the test and control images. A RANSAC algorithm was used because the data contained outliers. Fitting curves to the images before and after flow enabled measurement of the displacemnt of the laser beam during flow, which can be used to determine the height of the granular flow. However, this method causes variation in the value of displacement obtained for each run, because the best model is based on a different random sample each time.</p>
+	<p> The RANSAC algorithm was effective in fitting a curve to the vertical laser beam on the test and control images. A RANSAC algorithm was used because the data contained outliers. Fitting curves to the images before and after flow enabled measurement of the displacement of the laser beam during flow, which can be used to determine the height of the granular flow. However, this method causes variation in the value of displacement obtained for each run, because the best model is based on a different random sample each time.</p>
 
 
 
